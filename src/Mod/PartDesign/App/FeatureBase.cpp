@@ -93,10 +93,8 @@ void FeatureBase::onChanged(const App::Property* prop) {
 
 void FeatureBase::onDocumentRestored()
 {
-    // if the base is not part of a body then show its placement property again
-    auto body = getFeatureBody();
-    if (!body)
-        Placement.setStatus(App::Property::Hidden, false);
+    // show the placement properties on load
+    Placement.setStatus(App::Property::Hidden, false);
 }
 
 }//namespace PartDesign
